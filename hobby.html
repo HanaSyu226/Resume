@@ -55,6 +55,14 @@ header.top{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);
 .btn-line{background:var(--glass);color:var(--ink)}
 .btn-line:hover{border-color:var(--acc);color:var(--acc)}
 
+#print-btn{animation:pulse-glow 2.2s ease-in-out infinite}
+#print-btn:hover{animation-play-state:paused}
+@keyframes pulse-glow{
+  0%,100%{box-shadow:0 0 0 0 hsl(var(--accent-h) 82% 60% / .55);border-color:var(--line)}
+  50%{box-shadow:0 0 18px 4px hsl(var(--accent-h) 82% 60% / .55);border-color:hsl(var(--accent-h) 82% 60% / .7)}
+}
+@media(prefers-reduced-motion:reduce){#print-btn{animation:none}}
+
 /* ---- cover / bio spread (screen: matches site's tech aesthetic; magazine treatment is print-only, see @media print) ---- */
 .cover{display:none}
 .masthead-bar{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;
@@ -99,11 +107,39 @@ header.top{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);
 
 /* ---- feature intro (hobby section header) ---- */
 .hero{padding:52px 0 40px;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+@media(max-width:760px){.hero-grid{grid-template-columns:1fr}}
 .kicker{font-family:var(--f-hud);font-size:12px;letter-spacing:.3em;color:var(--acc);text-transform:uppercase;margin-bottom:14px}
 h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(32px,5.5vw,54px);letter-spacing:-.015em;line-height:1.06;max-width:820px}
 .hero p{color:var(--mut);max-width:600px;margin-top:18px;font-size:16.5px}
 .hero-meta{margin-top:26px;display:flex;gap:22px;flex-wrap:wrap;font-family:var(--f-hud);font-size:11.5px;letter-spacing:.08em;color:var(--mut)}
 .hero-meta b{color:var(--ink);font-weight:600}
+.hero-cta{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.hero-cta-ad{font-family:var(--f-disp);font-weight:800;font-size:17px;letter-spacing:-.01em;max-width:250px;
+  text-transform:uppercase;display:flex;flex-wrap:wrap;justify-content:center;gap:.32em;row-gap:.15em}
+.hero-cta-ad .word{display:inline-flex;white-space:nowrap}
+.hero-cta-ad .letter{display:inline-block;--lc:hsl(calc(var(--i) * 41) 90% 65%);color:var(--lc);
+  transform:translateY(0) scale(1);text-shadow:0 0 0 transparent}
+.hero-cta-ad .letter.jump{animation:letter-bounce .55s ease-in-out}
+@keyframes letter-bounce{
+  0%,100%{transform:translateY(0) scale(1);text-shadow:0 0 0 transparent}
+  40%{transform:translateY(-9px) scale(1.15);
+    text-shadow:0 0 6px var(--lc),0 0 16px var(--lc),0 0 28px var(--lc)}
+}
+.hero-cta-ad .letter.burst{animation:letter-burst .55s ease-out}
+@keyframes letter-burst{
+  0%{transform:scale(1);text-shadow:0 0 0 transparent}
+  45%{transform:scale(1.45);text-shadow:0 0 10px var(--lc),0 0 26px var(--lc),0 0 44px var(--lc)}
+  100%{transform:scale(1);text-shadow:0 0 6px var(--lc),0 0 14px var(--lc)}
+}
+.hero-cta-ad .letter.pulse-all{animation:letter-pulse-all 3.6s ease-in-out infinite}
+@keyframes letter-pulse-all{
+  0%,100%{transform:scale(1);text-shadow:0 0 3px var(--lc),0 0 8px var(--lc)}
+  50%{transform:scale(1.06);text-shadow:0 0 6px var(--lc),0 0 16px var(--lc),0 0 26px var(--lc)}
+}
+.btn-download{padding:18px 34px;border-radius:14px;font-size:17px;gap:11px}
+.hero-cta-note{font-family:var(--f-hud);font-size:10.5px;letter-spacing:.06em;color:var(--mut);max-width:220px}
+@media(prefers-reduced-motion:reduce){.hero-cta-ad{animation:none}}
 
 /* ---- grid ---- */
 main{padding:56px 0 90px}
@@ -179,6 +215,8 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
   .contents-title{color:#1E1A14}
   .contents-tag{color:#5C5445}
   .hero{border-color:#D8CFBC;padding:0 0 16px}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-cta{display:none}
   footer{border-color:#D8CFBC;color:#5C5445;padding:14px 0}
   .kicker{color:#8A6A2A}
   h1{font-family:var(--f-mag);color:#1E1A14}
@@ -207,12 +245,6 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
   <div class="wrap top-in">
     <a class="back" href="index.html">&larr;&nbsp; Back to portfolio</a>
     <a class="brand" href="index.html">AINA<b>//</b>MARDIA</a>
-    <div class="actions">
-      <button class="btn btn-line" id="print-btn">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-        Download as PDF
-      </button>
-    </div>
   </div>
 </header>
 
@@ -287,14 +319,24 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
 </section>
 
 <section class="hero">
-  <div class="wrap">
-    <div class="kicker">Beyond The Code</div>
-    <h1>Interior design &amp; spatial planning, sketched one room at a time</h1>
-    <p>When I'm not building software, I'm designing interiors — sketching layouts, testing proportions, and planning spaces in Coohom before they exist. A selection of that work is below.</p>
-    <div class="hero-meta">
-      <span><b>Aina Mardia Mohamad Kerta</b></span>
-      <span>Kuching, Sarawak</span>
-      <span>am.hana.mk@gmail.com</span>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="kicker">Beyond The Code</div>
+      <h1>Interior design &amp; spatial planning, sketched one room at a time</h1>
+      <p>When I'm not building software, I'm designing interiors — sketching layouts, testing proportions, and planning spaces in Coohom before they exist. A selection of that work is below.</p>
+      <div class="hero-meta">
+        <span><b>Aina Mardia Mohamad Kerta</b></span>
+        <span>Kuching, Sarawak</span>
+        <span>am.hana.mk@gmail.com</span>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <span class="hero-cta-ad" id="hero-cta-ad">Take A Closer Look, Download Now!</span>
+      <button class="btn btn-acc btn-download" id="print-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Download PDF
+      </button>
+      <span class="hero-cta-note">Full magazine-style PDF, ready to save or print</span>
     </div>
   </div>
 </section>
@@ -505,6 +547,65 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
 </footer>
 
 <script>
+(function(){
+  var el = document.getElementById('hero-cta-ad');
+  var text = el.textContent;
+  el.textContent = '';
+  var i = 0;
+  text.split(' ').forEach(function(word){
+    var wordSpan = document.createElement('span');
+    wordSpan.className = 'word';
+    word.split('').forEach(function(ch){
+      var span = document.createElement('span');
+      span.className = 'letter';
+      span.style.setProperty('--i', i);
+      span.textContent = ch;
+      i++;
+      wordSpan.appendChild(span);
+    });
+    el.appendChild(wordSpan);
+  });
+
+  var letters = Array.prototype.slice.call(el.querySelectorAll('.letter'));
+
+  function runCycle(){
+    var idx = 0;
+    var step = setInterval(function(){
+      var cur = letters[idx];
+      cur.classList.remove('jump');
+      void cur.offsetWidth;
+      cur.classList.add('jump');
+      idx++;
+      if(idx >= letters.length){
+        clearInterval(step);
+        setTimeout(bigBang, 550);
+      }
+    }, 220);
+  }
+
+  function bigBang(){
+    letters.forEach(function(l){
+      l.classList.remove('jump');
+      void l.offsetWidth;
+      l.classList.add('burst');
+    });
+    setTimeout(pulseAll, 550);
+  }
+
+  function pulseAll(){
+    letters.forEach(function(l){
+      l.classList.remove('burst');
+      l.classList.add('pulse-all');
+    });
+    setTimeout(function(){
+      letters.forEach(function(l){ l.classList.remove('pulse-all'); });
+      runCycle();
+    }, 10800);
+  }
+
+  runCycle();
+})();
+
 document.getElementById('print-btn').addEventListener('click', function(){
   var btn = this;
   var imgs = Array.prototype.slice.call(document.querySelectorAll('.hobby-gallery img, .cover-photo img'));
