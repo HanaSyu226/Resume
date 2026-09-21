@@ -12,11 +12,15 @@ The design is a night-drive heads-up display: visitors travel a glowing road tha
 
 - Animated "ignition" opening sequence and staggered name reveal
 - Scroll-drawn winding road timeline with waypoint cards
+- **Hall of Fame** — a photo gallery of medals, press features, and milestones with a keyboard-navigable lightbox. Drop images into `assets/hall-of-fame/` (see the README there for exact filenames) and cards upgrade themselves automatically; empty slots fall back to a clean icon.
 - Interactive Design Lab — live design token (accent hue) slider, stateful switch, micro-feedback button, and progress ring, all hand-built
 - In-browser résumé and cover-letter preview with downloadable PDFs
 - Day / night theme toggle
 - Press features from the Sarawak Tribune
-- Fully responsive; respects `prefers-reduced-motion`; keyboard-accessible modal
+- Mobile hamburger menu with a slide-down nav panel
+- Subtle film-grain texture and cursor-follow glow on hover-capable devices
+- Open Graph / Twitter Card meta tags and Person structured data for clean social previews and search results
+- Fully responsive; respects `prefers-reduced-motion`; keyboard-accessible modals; skip-to-content link
 
 ## Tech
 
@@ -30,6 +34,7 @@ assets/
   Aina-Mardia-Resume.pdf
   Aina-Mardia-Cover-Letter.pdf
   aina-portrait.jpeg
+  hall-of-fame/      — achievement photos (see README.txt inside)
 ```
 
 ## Run locally
