@@ -418,23 +418,13 @@ input[type=range].hue::-moz-range-thumb{width:22px;height:22px;border-radius:50%
 .press-link{font-family:var(--f-hud);font-size:12px;color:var(--acc);letter-spacing:.1em;margin-top:18px;display:inline-block}
 
 /* ============ DOCUMENTS ============ */
-.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-@media(max-width:820px){.doc-grid{grid-template-columns:1fr}}
+.doc-grid{display:grid;grid-template-columns:minmax(0,560px);justify-content:center;gap:22px}
 .doc-card{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:var(--shadow)}
 .doc-icon{width:52px;height:52px;border-radius:14px;background:var(--acc-soft);display:grid;place-items:center;margin-bottom:18px}
 .doc-icon svg{stroke:var(--acc)}
 .doc-title{font-family:var(--f-disp);font-weight:700;font-size:21px;margin-bottom:8px}
 .doc-desc{color:var(--mut);font-size:14.5px;margin-bottom:22px}
 .doc-actions{display:flex;flex-wrap:wrap;gap:10px}
-.cv-label{display:block;font-family:var(--f-hud);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
-.cv-select-wrap{position:relative;margin-bottom:22px}
-.cv-select-wrap::after{content:"";position:absolute;right:16px;top:50%;width:9px;height:9px;pointer-events:none;
-  border-right:1.6px solid var(--acc);border-bottom:1.6px solid var(--acc);transform:translateY(-70%) rotate(45deg)}
-.cv-select{width:100%;appearance:none;-webkit-appearance:none;font-family:var(--f-body);font-size:15px;font-weight:500;
-  color:var(--ink);background:var(--glass);border:1px solid var(--line);border-radius:12px;padding:13px 40px 13px 16px;
-  cursor:pointer;transition:border-color .2s}
-.cv-select:hover,.cv-select:focus-visible{border-color:var(--acc)}
-.cv-select option{background:var(--bg1);color:var(--ink)}
 
 /* ============ MODAL ============ */
 .modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px}
@@ -553,7 +543,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
   <a href="#teaching">Teaching</a>
   <a href="#docs">Documents</a>
   <a href="#contact">Contact</a>
-  <button class="pill" id="open-resume-mobile">View résumé &amp; cover letter</button>
+  <button class="pill" id="open-resume-mobile">View résumé</button>
 </nav>
 
 <!-- ================= HERO ================= -->
@@ -576,7 +566,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
         </h1>
         <p class="lede">I'm a software engineer and educator. I design <strong>interfaces that feel effortless to use</strong> — and I teach the fundamentals to the next generation of builders here in Kuching.</p>
         <div class="cta-row">
-          <button class="btn btn-acc" id="open-resume-hero">View résumé &amp; cover letter</button>
+          <button class="btn btn-acc" id="open-resume-hero">View résumé</button>
           <a class="btn btn-line" href="#journey">See my journey ↓</a>
         </div>
       </div>
@@ -599,8 +589,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
 <!-- ================= TICKER ================= -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span>Software Engineer <b>✦</b> UI/UX Designer <b>✦</b> IT Lecturer <b>✦</b> Power BI <b>✦</b> 2× Silver Medallist <b>✦</b> Sarawak Tribune Featured <b>✦</b> MSc IT '26 <b>✦</b></span>
-    <span>Software Engineer <b>✦</b> UI/UX Designer <b>✦</b> IT Lecturer <b>✦</b> Power BI <b>✦</b> 2× Silver Medallist <b>✦</b> Sarawak Tribune Featured <b>✦</b> MSc IT '26 <b>✦</b></span>
+    <span>Software Engineer <b>✦</b> UI/UX Designer <b>✦</b> IT Lecturer <b>✦</b> Power BI <b>✦</b> 2× Silver Medallist <b>✦</b> Sarawak Tribune Featured <b>✦</b></span>
+    <span>Software Engineer <b>✦</b> UI/UX Designer <b>✦</b> IT Lecturer <b>✦</b> Power BI <b>✦</b> 2× Silver Medallist <b>✦</b> Sarawak Tribune Featured <b>✦</b></span>
   </div>
 </div>
 
@@ -610,7 +600,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
     <div class="gauge"><b data-count="2">0</b><span>Silver Medals</span></div>
     <div class="gauge"><b data-count="2">0</b><span>Press Features</span></div>
     <div class="gauge"><b data-count="2">0</b><span>Modules Taught</span></div>
-    <div class="gauge"><b data-count="2026">0</b><span>MSc Commences</span></div>
+    <div class="gauge"><b data-count="3">0</b><span>Programmes</span></div>
   </div>
   <div class="wrap chips">
     <span class="chip"><em>◈</em> LaunchX · Sunway University</span>
@@ -937,8 +927,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="kicker">Documents</div>
-      <h2 class="sec-title">My résumé &amp; cover letter</h2>
-      <p class="sec-sub">Preview them right here, or download a copy to keep.</p>
+      <h2 class="sec-title">My résumé</h2>
+      <p class="sec-sub">Preview it right here, or download a copy to keep.</p>
     </div>
     <div class="doc-grid">
       <div class="doc-card reveal">
@@ -947,24 +937,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
         <p class="doc-desc">Information technology &amp; education — one page, current to 2026.</p>
         <div class="doc-actions">
           <button class="btn btn-acc open-doc" data-doc="resume">Preview</button>
-          <a class="btn btn-line" href="assets/Aina-Mardia-Resume.pdf" download>Download PDF</a>
-        </div>
-      </div>
-      <div class="doc-card reveal">
-        <div class="doc-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg></div>
-        <div class="doc-title">Cover Letter</div>
-        <p class="doc-desc">Tailored to who's reading — pick your context below.</p>
-        <label class="cv-label" for="cv-audience">Viewing as</label>
-        <div class="cv-select-wrap">
-          <select class="cv-select" id="cv-audience" aria-label="Choose which cover letter to view">
-            <option value="airborneo">AirBorneo</option>
-            <option value="university">University / Educator</option>
-            <option value="general" selected>General</option>
-          </select>
-        </div>
-        <div class="doc-actions">
-          <button class="btn btn-acc" id="cv-preview">Preview</button>
-          <a class="btn btn-line" id="cv-download" href="assets/AinaMardia-CV.pdf" download>Download PDF</a>
+          <a class="btn btn-line" href="assets/Aina%20Mardia%20Resume.pdf" download>Download PDF</a>
         </div>
       </div>
     </div>
@@ -998,9 +971,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
     <div class="modal-head">
       <div class="modal-tabs">
         <button class="mtab active" data-tab="resume">Résumé</button>
-        <button class="mtab" data-tab="cover">University</button>
-        <button class="mtab" data-tab="cover-airborneo">AirBorneo</button>
-        <button class="mtab" data-tab="cover-general">General</button>
       </div>
       <button class="mclose" data-close aria-label="Close preview">✕</button>
     </div>
@@ -1013,7 +983,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
         <div class="dv-meta">Kuching, Sarawak · am.hana.mk@gmail.com · 010-4443430</div>
 
         <div class="dv-h">Professional Summary</div>
-        <p>Software engineering graduate and university lecturer with experience spanning higher education, corporate research, and software development. Recognised at state level for innovation, with media coverage highlighting contributions to technology advocacy in Sarawak. Preparing to commence postgraduate research in Information Technology.</p>
+        <p>Software engineering graduate and university lecturer with experience spanning higher education, corporate research, and software development. Recognised at state level for innovation, with media coverage highlighting contributions to technology advocacy in Sarawak.</p>
 
         <div class="dv-h">Professional Experience</div>
         <div class="dv-job">
@@ -1056,63 +1026,10 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
         <p>Java, Python, HTML · UI/UX design &amp; web development · Microsoft Power BI — dashboards and data visualisation.</p>
 
         <div class="dl-row">
-          <a class="btn btn-acc" href="assets/Aina-Mardia-Resume.pdf" download>Download PDF</a>
+          <a class="btn btn-acc" href="assets/Aina%20Mardia%20Resume.pdf" download>Download PDF</a>
         </div>
       </div>
 
-      <!-- COVER LETTER VIEW -->
-      <div class="doc-view" id="view-cover">
-        <div class="dv-name">Cover Letter</div>
-        <div class="dv-role">Lecturer (Computing &amp; Software Engineering) — i-CATS University College</div>
-        <div class="dv-meta">Kuching, Sarawak · am.hana.mk@gmail.com · 010-4443430</div>
-
-        <p>Dear Members of the Hiring Committee,</p>
-        <p>It is with genuine enthusiasm that I submit my application for the position of Lecturer in Computing and Software Engineering. I write not as a stranger to i-CATS University College, but as one of its own: an alumna of the Bachelor of Software Engineering (Hons.) programme and, since January 2026, a part-time lecturer on its teaching staff. This position represents the natural deepening of a commitment I have already begun.</p>
-        <p>In my current capacity I deliver two modules — Introduction to Computer Systems &amp; Applications (Foundation) and Digital Literacy (Bridging) — designing course materials, leading lectures and tutorials, and administering assessments aligned with programme outcomes. Teaching at the institution where I trained affords me an intimate understanding of the i-CATS student journey, and I am comfortable delivering both the theoretical and practical components of the curriculum.</p>
-        <p>My classroom practice is grounded in recent industry experience. As a Research &amp; Development Intern at Sarawak Energy Berhad, I designed and delivered an executive Project Overview dashboard in Microsoft Power BI — and, while still completing that internship, I was offered a Software Developer position at Satok Digital Bridge, a role I held from May 2025 to January 2026.</p>
-        <p>I would welcome the opportunity to discuss how my teaching record at i-CATS and my industry grounding can contribute to the programme.</p>
-        <p>Yours sincerely,<br><strong>Aina Mardia Mohamad Kerta</strong></p>
-
-        <div class="dl-row">
-          <a class="btn btn-acc" href="assets/Aina-Mardia-Cover-Letter.pdf" download>Download PDF</a>
-        </div>
-      </div>
-
-      <!-- COVER LETTER VIEW — AIRBORNEO -->
-      <div class="doc-view" id="view-cover-airborneo">
-        <div class="dv-name">Cover Letter — AirBorneo</div>
-        <div class="dv-role">Re: Executive, Customer Experience</div>
-        <div class="dv-meta">Kuching, Sarawak · am.hana.mk@gmail.com · 010-4443430 · ainamardia.netlify.app</div>
-
-        <p>Dear Hiring Manager,</p>
-        <p>I am writing to express my sincere interest in the Executive, Customer Experience position at AirBorneo. As a software engineering graduate, university lecturer, and someone recognised at state level for technology innovation here in Sarawak, I am drawn to a role that combines analytical thinking, service improvement, and a genuine focus on the people at the heart of the experience. The chance to help shape the passenger journey for a homegrown airline building its reputation on customer-centricity is one I would be proud to take on.</p>
-        <p>Much of what this role calls for maps closely to work I have already done. During my Research &amp; Development internship at Sarawak Energy Berhad, I designed and delivered an executive Project Overview dashboard in Microsoft Power BI, consolidating dispersed project data into a single analytical interface for the R&amp;D department. That experience taught me how to turn scattered, messy data into clear insights that management can act on — precisely the skill needed to monitor customer satisfaction, complaint trends, and service performance metrics, and to present them in reports and dashboards that drive decisions.</p>
-        <p>My background in software development and UI/UX design gives me a strong instinct for identifying pain points and friction in a user's journey — the same lens that customer journey mapping across pre-flight, airport, onboard, and post-flight touchpoints requires. As a lecturer at i-CATS University College, I gather and respond to feedback every semester, coordinate across teams, and follow initiatives through to measurable outcomes. I am comfortable engaging stakeholders, researching industry trends and best practices, and preparing the kind of recommendations and business cases that move improvement initiatives forward.</p>
-        <p>I would welcome the opportunity to bring my blend of data analysis, design thinking, and cross-functional collaboration to AirBorneo's service excellence objectives. Thank you for considering my application — I would be delighted to discuss how I can contribute to strengthening the passenger experience and AirBorneo's reputation for customer-centricity.</p>
-        <p>Warm regards,<br><strong>Aina Mardia Mohamad Kerta</strong></p>
-
-        <div class="dl-row">
-          <a class="btn btn-acc" href="assets/AinaMardia-AirBorneo-CV.pdf" download>Download PDF</a>
-        </div>
-      </div>
-
-      <!-- COVER LETTER VIEW — GENERAL -->
-      <div class="doc-view" id="view-cover-general">
-        <div class="dv-name">Cover Letter — General</div>
-        <div class="dv-role">Software Engineer | Information Technology Lecturer</div>
-        <div class="dv-meta">Kuching, Sarawak · am.hana.mk@gmail.com · 010-4443430 · ainamardia.netlify.app</div>
-
-        <p>Dear Hiring Manager,</p>
-        <p>I am a software engineer and university lecturer based in Kuching, Sarawak, with a background spanning higher education, corporate research, and software development. I am writing to introduce myself and to express my interest in opportunities where I can contribute technical skill, analytical thinking, and a genuine commitment to doing meaningful work.</p>
-        <p>My experience began with a Research &amp; Development internship at Sarawak Energy Berhad, where I designed and delivered an executive Project Overview dashboard in Microsoft Power BI, consolidating dispersed project data into a single analytical interface for the department. That work taught me how to turn scattered, complex information into clear insights that decision-makers can act on. I went on to join Satok Digital Bridge as a Software Developer, contributing to software solutions in a digital innovation environment while applying UI/UX design principles and data-informed development practices.</p>
-        <p>As a Part-Time Lecturer at i-CATS University College, I design course materials, deliver lectures and tutorials, and assess student progress against programme outcomes. This role has strengthened my ability to communicate complex ideas clearly, respond to feedback, and collaborate with colleagues to deliver consistent results. Alongside my Bachelor of Software Engineering (Hons.), I bring a commitment to continuous learning and rigour in everything I take on. I have also been fortunate to have my work recognised at state level as a two-time Silver Medallist at the Sarawak Innovation Convention.</p>
-        <p>I believe my blend of technical proficiency, analytical ability, and collaborative approach would allow me to make a real contribution to any team I join. Thank you for taking the time to read my letter. I would welcome the opportunity to connect and to discuss how my skills and experience might align with your needs.</p>
-        <p>Warm regards,<br><strong>Aina Mardia Mohamad Kerta</strong></p>
-
-        <div class="dl-row">
-          <a class="btn btn-acc" href="assets/AinaMardia-CV.pdf" download>Download PDF</a>
-        </div>
-      </div>
 
     </div>
   </div>
@@ -1377,28 +1294,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
   document.querySelectorAll('.open-doc').forEach(function(b){
     b.addEventListener('click', function(){ openModal(b.dataset.doc); });
   });
-
-  /* ---------- CV audience picker ---------- */
-  var CV_FILES = {
-    airborneo: 'AinaMardia-AirBorneo-CV.pdf',
-    university: 'Aina-Mardia-Cover-Letter.pdf',
-    general: 'AinaMardia-CV.pdf'
-  };
-  var CV_TABS = {
-    airborneo: 'cover-airborneo',
-    university: 'cover',
-    general: 'cover-general'
-  };
-  var cvSelect = document.getElementById('cv-audience'), cvDownload = document.getElementById('cv-download'),
-      cvPreview = document.getElementById('cv-preview');
-  function updateCV(){
-    cvDownload.href = 'assets/' + CV_FILES[cvSelect.value];
-  }
-  if(cvSelect){
-    cvSelect.addEventListener('change', updateCV);
-    updateCV();
-    cvPreview.addEventListener('click', function(){ openModal(CV_TABS[cvSelect.value]); });
-  }
 
   modal.querySelectorAll('.mtab').forEach(function(t){
     t.addEventListener('click', function(){ setTab(t.dataset.tab); });
