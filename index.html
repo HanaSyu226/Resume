@@ -536,10 +536,10 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
       <a href="#press">Press</a>
       <a href="#hobby">Hobby</a>
       <a href="#work">Work</a>
-      <a href="#lab">Design Lab</a>
       <a href="#skills">Skills</a>
       <a href="#teaching">Teaching</a>
       <a href="#docs">Documents</a>
+      <a href="#lab">Design Lab</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-cta">
@@ -560,10 +560,10 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
   <a href="#press">Press</a>
   <a href="#hobby">Hobby</a>
   <a href="#work">Work</a>
-  <a href="#lab">Design Lab</a>
   <a href="#skills">Skills</a>
   <a href="#teaching">Teaching</a>
   <a href="#docs">Documents</a>
+  <a href="#lab">Design Lab</a>
   <a href="#contact">Contact</a>
   <button class="pill" id="open-resume-mobile">View résumé</button>
 </nav>
@@ -873,51 +873,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
   </div>
 </section>
 
-<!-- ================= DESIGN LAB ================= -->
-<section id="lab">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="kicker">Design Lab</div>
-      <h2 class="sec-title">Don't take my word for it — touch it</h2>
-      <p class="sec-sub">I hand-built these little interactions. Interface design is a feeling — go ahead, play with them.</p>
-    </div>
-    <div class="lab-grid">
-      <div class="tile reveal">
-        <h3>Live design token</h3>
-        <div class="demo" style="flex-direction:column;align-items:stretch">
-          <input type="range" class="hue" id="hue" min="0" max="360" value="172" aria-label="Site accent hue">
-          <span class="hue-val" id="hue-val">accent: hsl(172°)</span>
-        </div>
-        <p>Drag it — my whole site recolours from a single design token. That's a design system at work.</p>
-      </div>
-      <div class="tile reveal">
-        <h3>States &amp; affordance</h3>
-        <div class="demo">
-          <button class="switch" id="sw" role="switch" aria-checked="false" aria-label="Demo toggle"></button>
-          <span class="sw-label" id="sw-label">HEADLIGHTS · OFF</span>
-        </div>
-        <p>A control should announce its state before you read a single word.</p>
-      </div>
-      <div class="tile reveal">
-        <h3>Micro-feedback</h3>
-        <div class="demo">
-          <button class="btn btn-line save" id="save-btn">Save changes</button>
-        </div>
-        <p>Every action deserves a response. Click it — the button confirms, then resets.</p>
-      </div>
-      <div class="tile reveal">
-        <h3>Progress, honestly told</h3>
-        <div class="demo ring-wrap">
-          <svg class="ring" width="80" height="80" viewBox="0 0 80 80"><circle class="bg" cx="40" cy="40" r="36"/><circle class="fg" id="ring-fg" cx="40" cy="40" r="36"/></svg>
-          <span class="ring-val" id="ring-val">0%</span>
-          <button class="btn btn-line" id="ring-btn">Run</button>
-        </div>
-        <p>Motion that informs, not decorates — progress you can trust at a glance.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= SKILLS ================= -->
 <section id="skills">
   <div class="wrap">
@@ -1005,6 +960,51 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
         <div class="doc-actions">
           <button class="btn btn-acc open-doc" data-doc="resume">Preview</button>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DESIGN LAB ================= -->
+<section id="lab">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Design Lab</div>
+      <h2 class="sec-title">Don't take my word for it — touch it</h2>
+      <p class="sec-sub">I hand-built these little interactions. Interface design is a feeling — go ahead, play with them.</p>
+    </div>
+    <div class="lab-grid">
+      <div class="tile reveal">
+        <h3>Live design token</h3>
+        <div class="demo" style="flex-direction:column;align-items:stretch">
+          <input type="range" class="hue" id="hue" min="0" max="360" value="172" aria-label="Site accent hue">
+          <span class="hue-val" id="hue-val">accent: hsl(172°)</span>
+        </div>
+        <p>Drag it — my whole site recolours from a single design token. That's a design system at work.</p>
+      </div>
+      <div class="tile reveal">
+        <h3>States &amp; affordance</h3>
+        <div class="demo">
+          <button class="switch" id="sw" role="switch" aria-checked="false" aria-label="Demo toggle"></button>
+          <span class="sw-label" id="sw-label">HEADLIGHTS · OFF</span>
+        </div>
+        <p>A control should announce its state before you read a single word.</p>
+      </div>
+      <div class="tile reveal">
+        <h3>Micro-feedback</h3>
+        <div class="demo">
+          <button class="btn btn-line save" id="save-btn">Save changes</button>
+        </div>
+        <p>Every action deserves a response. Click it — the button confirms, then resets.</p>
+      </div>
+      <div class="tile reveal">
+        <h3>Progress, honestly told</h3>
+        <div class="demo ring-wrap">
+          <svg class="ring" width="80" height="80" viewBox="0 0 80 80"><circle class="bg" cx="40" cy="40" r="36"/><circle class="fg" id="ring-fg" cx="40" cy="40" r="36"/></svg>
+          <span class="ring-val" id="ring-val">0%</span>
+          <button class="btn btn-line" id="ring-btn">Run</button>
+        </div>
+        <p>Motion that informs, not decorates — progress you can trust at a glance.</p>
       </div>
     </div>
   </div>
