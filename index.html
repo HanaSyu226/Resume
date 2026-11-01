@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;600&family=Chakra+Petch:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Aina Mardia Mohamad Kerta","jobTitle":["Software Engineer","UI/UX Designer","IT Lecturer"],"email":"mailto:am.hana.mk@gmail.com","telephone":"010-4443430","address":{"@type":"PostalAddress","addressLocality":"Kuching","addressRegion":"Sarawak","addressCountry":"MY"},"worksFor":{"@type":"Organization","name":"i-CATS University College"},"alumniOf":{"@type":"CollegeOrUniversity","name":"i-CATS University College"}}
 </script>
@@ -352,6 +353,22 @@ h2.sec-title{font-family:var(--f-disp);font-weight:800;font-size:clamp(30px,5vw,
 .tile{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:18px;min-height:190px}
 .tile h3{font-family:var(--f-hud);font-weight:600;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
 .tile p{color:var(--mut);font-size:14px}
+
+/* ============ SKILLS ============ */
+.skills-group{margin-bottom:34px}
+.skills-group:last-child{margin-bottom:0}
+.skills-group-title{font-family:var(--f-hud);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--acc);margin-bottom:16px}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:14px}
+.skill-card{background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:20px 12px;display:flex;flex-direction:column;align-items:center;
+  gap:10px;text-align:center;transition:.2s}
+.skill-card:hover{border-color:var(--acc);transform:translateY(-3px)}
+.skill-card i{font-size:34px;line-height:1}
+.skill-card span{font-family:var(--f-hud);font-size:11.5px;letter-spacing:.04em;color:var(--mut)}
+@media(max-width:560px){
+  .skills-grid{grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:10px}
+  .skill-card{padding:16px 8px}
+  .skill-card i{font-size:28px}
+}
 .demo{flex:1;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 input[type=range].hue{-webkit-appearance:none;appearance:none;width:100%;height:12px;border-radius:100px;outline-offset:4px;
   background:linear-gradient(90deg,hsl(0 80% 60%),hsl(60 80% 60%),hsl(120 80% 55%),hsl(180 80% 55%),hsl(240 80% 65%),hsl(300 80% 62%),hsl(360 80% 60%))}
@@ -464,6 +481,9 @@ input[type=range].hue::-moz-range-thumb{width:22px;height:22px;border-radius:50%
 .doc-view li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--acc)}
 .doc-view p{color:var(--mut);font-size:14.5px;margin-bottom:10px}
 .dl-row{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.pdf-frame{width:100%;height:75vh;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.pdf-frame iframe{width:100%;height:100%;border:0;display:block}
+@media(max-width:560px){.pdf-frame{height:62vh}}
 
 /* ============ CONTACT / FOOTER ============ */
 #contact{text-align:center;padding:130px 0 110px;position:relative;overflow:hidden}
@@ -517,6 +537,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
       <a href="#hobby">Hobby</a>
       <a href="#work">Work</a>
       <a href="#lab">Design Lab</a>
+      <a href="#skills">Skills</a>
       <a href="#teaching">Teaching</a>
       <a href="#docs">Documents</a>
       <a href="#contact">Contact</a>
@@ -540,6 +561,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
   <a href="#hobby">Hobby</a>
   <a href="#work">Work</a>
   <a href="#lab">Design Lab</a>
+  <a href="#skills">Skills</a>
   <a href="#teaching">Teaching</a>
   <a href="#docs">Documents</a>
   <a href="#contact">Contact</a>
@@ -896,6 +918,51 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
   </div>
 </section>
 
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Skills</div>
+      <h2 class="sec-title">What I build with</h2>
+      <p class="sec-sub">Languages, frameworks and tools I use day to day.</p>
+    </div>
+
+    <div class="skills-group reveal">
+      <div class="skills-group-title">Languages</div>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+        <div class="skill-card"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+        <div class="skill-card"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+        <div class="skill-card"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+        <div class="skill-card"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
+        <div class="skill-card"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+        <div class="skill-card"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+      </div>
+    </div>
+
+    <div class="skills-group reveal">
+      <div class="skills-group-title">Frameworks &amp; Libraries</div>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="devicon-laravel-plain colored"></i><span>Laravel</span></div>
+        <div class="skill-card"><i class="devicon-nextjs-original colored"></i><span>Next.js</span></div>
+        <div class="skill-card"><i class="devicon-tailwindcss-plain colored"></i><span>Tailwind CSS</span></div>
+      </div>
+    </div>
+
+    <div class="skills-group reveal">
+      <div class="skills-group-title">Database &amp; Tools</div>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+        <div class="skill-card"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+        <div class="skill-card"><i class="devicon-github-original colored"></i><span>GitHub</span></div>
+        <div class="skill-card"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
+        <div class="skill-card"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ================= TEACHING ================= -->
 <section id="teaching">
   <div class="wrap">
@@ -937,7 +1004,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
         <p class="doc-desc">Information technology &amp; education — one page, current to 2026.</p>
         <div class="doc-actions">
           <button class="btn btn-acc open-doc" data-doc="resume">Preview</button>
-          <a class="btn btn-line" href="assets/Aina%20Mardia%20Resume.pdf" download>Download PDF</a>
         </div>
       </div>
     </div>
@@ -978,53 +1044,9 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-fa
 
       <!-- RESUME VIEW -->
       <div class="doc-view active" id="view-resume">
-        <div class="dv-name">Aina Mardia Mohamad Kerta</div>
-        <div class="dv-role">Information Technology Lecturer | Software Engineer</div>
-        <div class="dv-meta">Kuching, Sarawak · am.hana.mk@gmail.com · 010-4443430</div>
-
-        <div class="dv-h">Professional Summary</div>
-        <p>Software engineering graduate and university lecturer with experience spanning higher education, corporate research, and software development. Recognised at state level for innovation, with media coverage highlighting contributions to technology advocacy in Sarawak.</p>
-
-        <div class="dv-h">Professional Experience</div>
-        <div class="dv-job">
-          <div class="dv-jt">Part-Time Lecturer — <em>i-CATS University College</em></div>
-          <div class="dv-jd">Jan 2026 – Present</div>
-          <ul>
-            <li>Deliver undergraduate instruction in Introduction to Computer Systems &amp; Applications (Foundation) and Digital Literacy (Bridging).</li>
-            <li>Design course materials, conduct lectures and tutorials, and administer assessments aligned with programme outcomes.</li>
-            <li>Preparation underway to assume Diploma-level modules.</li>
-          </ul>
+        <div class="pdf-frame">
+          <iframe src="assets/Aina%20Mardia%20Resume.pdf" title="Aina Mardia Mohamad Kerta — Résumé preview" loading="lazy"></iframe>
         </div>
-        <div class="dv-job">
-          <div class="dv-jt">Software Developer — <em>Satok Digital Bridge</em></div>
-          <div class="dv-jd">May 2025 – Jan 2026</div>
-          <ul>
-            <li>Offered the position during the R&amp;D internship at Sarawak Energy Berhad, commencing upon the internship's completion.</li>
-            <li>Contributed to software delivery within a digital innovation environment, integrating UI/UX design principles and data-informed development practices.</li>
-          </ul>
-        </div>
-        <div class="dv-job">
-          <div class="dv-jt">Research &amp; Development Intern — <em>Sarawak Energy Berhad</em></div>
-          <div class="dv-jd">Jan 2025 – May 2025</div>
-          <ul>
-            <li>Designed and delivered an executive Project Overview dashboard in Microsoft Power BI for the R&amp;D department.</li>
-          </ul>
-        </div>
-
-        <div class="dv-h">Education</div>
-        <div class="dv-job"><div class="dv-jt">Bachelor of Software Engineering (Hons.) — <em>i-CATS University College</em></div><div class="dv-jd">Conferred Nov 2025</div></div>
-
-        <div class="dv-h">Awards &amp; Recognition</div>
-        <ul>
-          <li>Silver Medallist — Sarawak Innovation Convention 2024 &amp; 2023</li>
-          <li>Profiled by the Sarawak Tribune — "Youth Tech Visionary", International Youth Day 2025</li>
-          <li>Featured in the Sarawak Tribune — International Day of Women and Girls in Science 2025</li>
-          <li>Selected Participant — LaunchX (Sunway University) · TEGAS Bootcamp</li>
-        </ul>
-
-        <div class="dv-h">Technical Proficiencies</div>
-        <p>Java, Python, HTML · UI/UX design &amp; web development · Microsoft Power BI — dashboards and data visualisation.</p>
-
         <div class="dl-row">
           <a class="btn btn-acc" href="assets/Aina%20Mardia%20Resume.pdf" download>Download PDF</a>
         </div>
