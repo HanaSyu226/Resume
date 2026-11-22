@@ -46,7 +46,13 @@ header.top{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);
 .back:hover{color:var(--acc)}
 .brand{font-family:var(--f-hud);font-weight:600;font-size:13.5px;letter-spacing:.14em;color:var(--ink);text-decoration:none}
 .brand b{color:var(--acc)}
-.actions{display:flex;gap:10px}
+.actions{display:flex;gap:10px;align-items:center}
+.lang-switch{display:flex;gap:4px;background:var(--glass);border:1px solid var(--line);border-radius:100px;padding:3px}
+.lang-switch button{font-family:var(--f-hud);font-size:11px;letter-spacing:.08em;padding:6px 12px;border:0;border-radius:100px;
+  background:transparent;color:var(--mut);cursor:pointer;transition:.2s}
+.lang-switch button.active{background:var(--acc);color:var(--acc-ink)}
+.lang-switch button:hover:not(.active){color:var(--ink)}
+@media print{.lang-switch{display:none}}
 .btn{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:11px;font-weight:600;font-size:14px;
   font-family:var(--f-body);border:1px solid var(--line);cursor:pointer;text-decoration:none;transition:.2s}
 .btn-acc{background:var(--acc);color:var(--acc-ink);border-color:transparent;
@@ -243,26 +249,32 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
 
 <header class="top">
   <div class="wrap top-in">
-    <a class="back" href="index.html">&larr;&nbsp; Back to portfolio</a>
-    <a class="brand" href="index.html">AINA<b>//</b>MARDIA</a>
+    <a class="back" href="index.html" data-i18n="common.backLink">&larr;&nbsp; Back to portfolio</a>
+    <div class="actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang-btn="en">EN</button>
+        <button type="button" data-lang-btn="ms">BM</button>
+      </div>
+      <a class="brand" href="index.html">AINA<b>//</b>MARDIA</a>
+    </div>
   </div>
 </header>
 
 <section class="cover">
   <div class="wrap">
     <div class="masthead-bar">
-      <div class="masthead-title">Beyond <span>the Code</span></div>
-      <div class="masthead-issue">A Portfolio Supplement<br>Issue No. 01 — 2026</div>
+      <div class="masthead-title" data-i18n="hb.mastheadTitle">Beyond <span>the Code</span></div>
+      <div class="masthead-issue" data-i18n="hb.mastheadIssue">A Portfolio Supplement<br>Issue No. 01 — 2026</div>
     </div>
-    <div class="masthead-sub"><span>Aina<b>//</b>Mardia</span><span>Software &amp; Interiors</span><span>Kuching, Sarawak</span></div>
+    <div class="masthead-sub"><span>Aina<b>//</b>Mardia</span><span data-i18n="hb.mastheadSubRole">Software &amp; Interiors</span><span>Kuching, Sarawak</span></div>
     <div class="cover-grid">
       <div class="cover-photo">
         <img src="assets/aina-portrait.jpeg" alt="Portrait of Aina Mardia Mohamad Kerta">
       </div>
       <div>
         <h1 class="cover-name">Aina Mardia<br>Mohamad Kerta</h1>
-        <div class="cover-role">Software Engineer · UI/UX Designer · IT Lecturer</div>
-        <p class="cover-bio">I build software by day, teach the students who'll do the same after me, and spend whatever's left sketching rooms that don't exist yet. This issue is the side of my work that doesn't usually make it onto a résumé — the spaces I've designed just because I couldn't stop imagining them.</p>
+        <div class="cover-role" data-i18n="hb.coverRole">Software Engineer · UI/UX Designer · IT Lecturer</div>
+        <p class="cover-bio" data-i18n="hb.coverBio">I build software by day, teach the students who'll do the same after me, and spend whatever's left sketching rooms that don't exist yet. This issue is the side of my work that doesn't usually make it onto a résumé — the spaces I've designed just because I couldn't stop imagining them.</p>
         <div class="cover-contact">
           <span>Kuching, Sarawak</span>
           <span>am.hana.mk@gmail.com</span>
@@ -273,27 +285,27 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
 
     <div class="facts-grid">
       <div class="fact-card">
-        <div class="fact-h">Experience</div>
+        <div class="fact-h" data-i18n="hb.factExpH">Experience</div>
         <ul>
-          <li>Part-Time Lecturer — i-CATS University College (Jan 2026–Present)</li>
-          <li>Software Developer — Satok Digital Bridge (May 2025–Jan 2026)</li>
-          <li>R&amp;D Intern — Sarawak Energy Berhad (Jan–May 2025)</li>
+          <li data-i18n="hb.factExp1">Part-Time Lecturer — i-CATS University College (Jan 2026–Present)</li>
+          <li data-i18n="hb.factExp2">Software Developer — Satok Digital Bridge (May 2025–Jan 2026)</li>
+          <li data-i18n="hb.factExp3">R&amp;D Intern — Sarawak Energy Berhad (Jan–May 2025)</li>
         </ul>
       </div>
       <div class="fact-card">
-        <div class="fact-h">Education</div>
-        <p>Bachelor of Software Engineering (Hons.) — i-CATS University College, conferred Nov 2025.</p>
+        <div class="fact-h" data-i18n="hb.factEduH">Education</div>
+        <p data-i18n="hb.factEdu">Bachelor of Software Engineering (Hons.) — i-CATS University College, conferred Nov 2025.</p>
       </div>
       <div class="fact-card">
-        <div class="fact-h">Awards &amp; Recognition</div>
+        <div class="fact-h" data-i18n="hb.factAwardsH">Awards &amp; Recognition</div>
         <ul>
-          <li>Silver Medallist — Sarawak Innovation Convention 2024 &amp; 2023</li>
-          <li>Profiled by the Sarawak Tribune — "Youth Tech Visionary," 2025</li>
-          <li>Selected Participant — LaunchX (Sunway University) · TEGAS Bootcamp</li>
+          <li data-i18n="hb.factAward1">Silver Medallist — Sarawak Innovation Convention 2024 &amp; 2023</li>
+          <li data-i18n="hb.factAward2">Profiled by the Sarawak Tribune — "Youth Tech Visionary," 2025</li>
+          <li data-i18n="hb.factAward3">Selected Participant — LaunchX (Sunway University) · TEGAS Bootcamp</li>
         </ul>
       </div>
       <div class="fact-card">
-        <div class="fact-h">Skills</div>
+        <div class="fact-h" data-i18n="hb.factSkillsH">Skills</div>
         <div class="skill-chips">
           <span class="skill-chip">Java</span>
           <span class="skill-chip">Python</span>
@@ -306,13 +318,13 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
     </div>
 
     <div class="contents">
-      <div class="contents-h">In This Issue</div>
+      <div class="contents-h" data-i18n="hb.contentsH">In This Issue</div>
       <ul class="contents-list">
-        <li><span class="contents-num">01</span><span class="contents-title">Student Lounge Concept</span><span class="contents-tag">i-CATS Library</span></li>
-        <li><span class="contents-num">02</span><span class="contents-title">Nurina's House Inspiration</span><span class="contents-tag">Rumah Panjang, Reimagined</span></li>
-        <li><span class="contents-num">03</span><span class="contents-title">My Room Redesign</span><span class="contents-tag">Built In Real Life</span></li>
-        <li><span class="contents-num">04</span><span class="contents-title">Loft Exploration</span><span class="contents-tag">Early Work</span></li>
-        <li><span class="contents-num">05</span><span class="contents-title">Small Space, Big Character</span><span class="contents-tag">Most Recent</span></li>
+        <li><span class="contents-num">01</span><span class="contents-title" data-i18n="hobby.card1.title">Student Lounge Concept</span><span class="contents-tag" data-i18n="hobby.card1.tag">i-CATS Library</span></li>
+        <li><span class="contents-num">02</span><span class="contents-title" data-i18n="hobby.card2.title">Nurina's House Inspiration</span><span class="contents-tag" data-i18n="hobby.card2.tag">Rumah Panjang, Reimagined</span></li>
+        <li><span class="contents-num">03</span><span class="contents-title" data-i18n="hobby.card3.title">My Room Redesign</span><span class="contents-tag" data-i18n="hobby.card3.tag">Built In Real Life</span></li>
+        <li><span class="contents-num">04</span><span class="contents-title" data-i18n="hobby.card4.title">Loft Exploration</span><span class="contents-tag">Early Work</span></li>
+        <li><span class="contents-num">05</span><span class="contents-title" data-i18n="hobby.card5.title">Small Space, Big Character</span><span class="contents-tag" data-i18n="hobby.card5.tag">Most Recent</span></li>
       </ul>
     </div>
   </div>
@@ -321,9 +333,9 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <div class="kicker">Beyond The Code</div>
-      <h1>Interior design &amp; spatial planning, sketched one room at a time</h1>
-      <p>When I'm not building software, I'm designing interiors — sketching layouts, testing proportions, and planning spaces in Coohom before they exist. A selection of that work is below.</p>
+      <div class="kicker" data-i18n="hobby.kicker">Beyond The Code</div>
+      <h1 data-i18n="hb.heroH1">Interior design &amp; spatial planning, sketched one room at a time</h1>
+      <p data-i18n="hb.heroP">When I'm not building software, I'm designing interiors — sketching layouts, testing proportions, and planning spaces in Coohom before they exist. A selection of that work is below.</p>
       <div class="hero-meta">
         <span><b>Aina Mardia Mohamad Kerta</b></span>
         <span>Kuching, Sarawak</span>
@@ -334,9 +346,9 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
       <span class="hero-cta-ad" id="hero-cta-ad">Take A Closer Look, Download Now!</span>
       <button class="btn btn-acc btn-download" id="print-btn">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-        Download PDF
+        <span data-i18n="common.downloadPdf">Download PDF</span>
       </button>
-      <span class="hero-cta-note">Full magazine-style PDF, ready to save or print</span>
+      <span class="hero-cta-note" data-i18n="hb.ctaNote">Full magazine-style PDF, ready to save or print</span>
     </div>
   </div>
 </section>
@@ -353,20 +365,20 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
           </div>
           <iframe class="hobby-frame" src="https://www.coohom.com/pub/saas/apps/share/mpbaksvmcmiaiaabbe888888" title="Student Lounge concept, live preview on Coohom" loading="lazy" referrerpolicy="no-referrer"></iframe>
         </div>
-        <div class="print-note">Live, spinnable 3D preview available at the link below</div>
+        <div class="print-note" data-i18n="common.printNote">Live, spinnable 3D preview available at the link below</div>
         <div class="hobby-body">
-          <div class="hobby-tag">i-CATS Library</div>
-          <h3 class="hobby-title">Student Lounge Concept</h3>
-          <div class="hobby-byline">By Aina Mardia Mohamad Kerta · Renders: Coohom</div>
-          <p class="hobby-desc">Sketched for my MPP (Majlis Perwakilan Pelajar) selection campaign — a reimagined lounge corner for the i-CATS Library. Months later, I watched pieces of it come to life: my concept was pitched to the Student Council and Affairs, and when Maznah Library was revamped, the meeting room, individual computer stations and lounge sofas I'd envisioned were built in. Not every detail survived — but the library also gained a student snooker area and a small café elsewhere on campus.</p>
-          <p class="hobby-quote">"A student sketch, partly built into a real space students now use."</p>
+          <div class="hobby-tag" data-i18n="hobby.card1.tag">i-CATS Library</div>
+          <h3 class="hobby-title" data-i18n="hobby.card1.title">Student Lounge Concept</h3>
+          <div class="hobby-byline" data-i18n="common.byline">By Aina Mardia Mohamad Kerta · Renders: Coohom</div>
+          <p class="hobby-desc" data-i18n="hobby.card1.descFull">Sketched for my MPP (Majlis Perwakilan Pelajar) selection campaign — a reimagined lounge corner for the i-CATS Library. Months later, I watched pieces of it come to life: my concept was pitched to the Student Council and Affairs, and when Maznah Library was revamped, the meeting room, individual computer stations and lounge sofas I'd envisioned were built in. Not every detail survived — but the library also gained a student snooker area and a small café elsewhere on campus.</p>
+          <p class="hobby-quote" data-i18n="hobby.card1.quote">"A student sketch, partly built into a real space students now use."</p>
           <a class="hobby-visit" href="https://www.coohom.com/pub/saas/apps/share/mpbaksvmcmiaiaabbe888888" target="_blank" rel="noopener">
-            OPEN IN COOHOM
+            <span data-i18n="common.openInCoohom">OPEN IN COOHOM</span>
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
           </a>
         </div>
       </div>
-      <div class="gallery-label">In Frame — Full Render Set</div>
+      <div class="gallery-label" data-i18n="common.galleryLabel">In Frame — Full Render Set</div>
       <div class="hobby-gallery">
         <img src="assets/hobby/p1-lounge/1.jpg" alt="Student Lounge Concept render 1">
         <img src="assets/hobby/p1-lounge/2.jpg" alt="Student Lounge Concept render 2">
@@ -388,20 +400,20 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
           </div>
           <iframe class="hobby-frame" src="https://www.coohom.com/pub/saas/apps/share/mqf7kcnmcmknaaabbm888888" title="Nurina's House Inspiration, live preview on Coohom" loading="lazy" referrerpolicy="no-referrer"></iframe>
         </div>
-        <div class="print-note">Live, spinnable 3D preview available at the link below</div>
+        <div class="print-note" data-i18n="common.printNote">Live, spinnable 3D preview available at the link below</div>
         <div class="hobby-body">
-          <div class="hobby-tag">Rumah Panjang, Reimagined</div>
-          <h3 class="hobby-title">Nurina's House Inspiration</h3>
-          <div class="hobby-byline">By Aina Mardia Mohamad Kerta · Renders: Coohom</div>
-          <p class="hobby-desc">After visiting a friend's home — almost a longhouse in itself, with 10 bedrooms, 2 bathrooms and a sprawling kitchen, dining and living area — I sketched my own take.</p>
-          <p class="hobby-quote">"Far fewer rooms, a much smaller footprint — but still carrying Sarawak's rumah panjang identity, made modern."</p>
+          <div class="hobby-tag" data-i18n="hobby.card2.tag">Rumah Panjang, Reimagined</div>
+          <h3 class="hobby-title" data-i18n="hobby.card2.title">Nurina's House Inspiration</h3>
+          <div class="hobby-byline" data-i18n="common.byline">By Aina Mardia Mohamad Kerta · Renders: Coohom</div>
+          <p class="hobby-desc" data-i18n="hobby.card2.descFull">After visiting a friend's home — almost a longhouse in itself, with 10 bedrooms, 2 bathrooms and a sprawling kitchen, dining and living area — I sketched my own take.</p>
+          <p class="hobby-quote" data-i18n="hobby.card2.quote">"Far fewer rooms, a much smaller footprint — but still carrying Sarawak's rumah panjang identity, made modern."</p>
           <a class="hobby-visit" href="https://www.coohom.com/pub/saas/apps/share/mqf7kcnmcmknaaabbm888888" target="_blank" rel="noopener">
-            OPEN IN COOHOM
+            <span data-i18n="common.openInCoohom">OPEN IN COOHOM</span>
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
           </a>
         </div>
       </div>
-      <div class="gallery-label">In Frame — Full Render Set</div>
+      <div class="gallery-label" data-i18n="common.galleryLabel">In Frame — Full Render Set</div>
       <div class="hobby-gallery">
         <img src="assets/hobby/p2-nurina/1.jpg" alt="Nurina's House Inspiration render 1">
         <img src="assets/hobby/p2-nurina/2.jpg" alt="Nurina's House Inspiration render 2">
@@ -430,20 +442,20 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
           </div>
           <iframe class="hobby-frame" src="https://www.coohom.com/pub/saas/apps/share/nkymouqkqrf2eaabca888888" title="My Room Redesign, live preview on Coohom" loading="lazy" referrerpolicy="no-referrer"></iframe>
         </div>
-        <div class="print-note">Live, spinnable 3D preview available at the link below</div>
+        <div class="print-note" data-i18n="common.printNote">Live, spinnable 3D preview available at the link below</div>
         <div class="hobby-body">
-          <div class="hobby-tag">Built In Real Life</div>
-          <h3 class="hobby-title">My Room Redesign</h3>
-          <div class="hobby-byline">By Aina Mardia Mohamad Kerta · Renders: Coohom</div>
-          <p class="hobby-desc">This one didn't stay a concept. Before touching a single piece of furniture, I sketched my room exactly how I wanted it — layout, placement, everything — and then rebuilt it in real life to match. I redo my room every year now, and this has become my go-to way to plan the change before committing to it.</p>
-          <p class="hobby-quote">"It came out just as I'd designed it."</p>
+          <div class="hobby-tag" data-i18n="hobby.card3.tag">Built In Real Life</div>
+          <h3 class="hobby-title" data-i18n="hobby.card3.title">My Room Redesign</h3>
+          <div class="hobby-byline" data-i18n="common.byline">By Aina Mardia Mohamad Kerta · Renders: Coohom</div>
+          <p class="hobby-desc" data-i18n="hobby.card3.desc">This one didn't stay a concept. Before touching a single piece of furniture, I sketched my room exactly how I wanted it — layout, placement, everything — and then rebuilt it in real life to match. I redo my room every year now, and this has become my go-to way to plan the change before committing to it.</p>
+          <p class="hobby-quote" data-i18n="hobby.card3.quote">"It came out just as I'd designed it."</p>
           <a class="hobby-visit" href="https://www.coohom.com/pub/saas/apps/share/nkymouqkqrf2eaabca888888" target="_blank" rel="noopener">
-            OPEN IN COOHOM
+            <span data-i18n="common.openInCoohom">OPEN IN COOHOM</span>
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
           </a>
         </div>
       </div>
-      <div class="gallery-label">In Frame — Full Render Set</div>
+      <div class="gallery-label" data-i18n="common.galleryLabel">In Frame — Full Render Set</div>
       <div class="hobby-gallery">
         <img src="assets/hobby/p3-room/1.jpg" alt="My Room Redesign render 1">
         <img src="assets/hobby/p3-room/2.jpg" alt="My Room Redesign render 2">
@@ -462,20 +474,20 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
           </div>
           <iframe class="hobby-frame" src="https://www.coohom.com/pub/saas/apps/share/nkynorikqrf2eaabae888888" title="Loft Exploration, live preview on Coohom" loading="lazy" referrerpolicy="no-referrer"></iframe>
         </div>
-        <div class="print-note">Live, spinnable 3D preview available at the link below</div>
+        <div class="print-note" data-i18n="common.printNote">Live, spinnable 3D preview available at the link below</div>
         <div class="hobby-body">
-          <div class="hobby-tag">Early Work · 3–4 Years Ago</div>
-          <h3 class="hobby-title">Loft Exploration</h3>
-          <div class="hobby-byline">By Aina Mardia Mohamad Kerta · Renders: Coohom</div>
-          <p class="hobby-desc">One of the first designs I ever sketched in Coohom, long before any of the projects above. No brief, no real-world constraint — just a loft I built purely to see how far I could push my own eye for space, proportion and aesthetics.</p>
-          <p class="hobby-quote">"Looking back at it now, it's the starting point for everything I've designed since."</p>
+          <div class="hobby-tag" data-i18n="hobby.card4.tag">Early Work · 3–4 Years Ago</div>
+          <h3 class="hobby-title" data-i18n="hobby.card4.title">Loft Exploration</h3>
+          <div class="hobby-byline" data-i18n="common.byline">By Aina Mardia Mohamad Kerta · Renders: Coohom</div>
+          <p class="hobby-desc" data-i18n="hobby.card4.descFull">One of the first designs I ever sketched in Coohom, long before any of the projects above. No brief, no real-world constraint — just a loft I built purely to see how far I could push my own eye for space, proportion and aesthetics.</p>
+          <p class="hobby-quote" data-i18n="hobby.card4.quote">"Looking back at it now, it's the starting point for everything I've designed since."</p>
           <a class="hobby-visit" href="https://www.coohom.com/pub/saas/apps/share/nkynorikqrf2eaabae888888" target="_blank" rel="noopener">
-            OPEN IN COOHOM
+            <span data-i18n="common.openInCoohom">OPEN IN COOHOM</span>
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
           </a>
         </div>
       </div>
-      <div class="gallery-label">In Frame — Full Render Set</div>
+      <div class="gallery-label" data-i18n="common.galleryLabel">In Frame — Full Render Set</div>
       <div class="hobby-gallery">
         <img src="assets/hobby/p4-loft/1.jpg" alt="Loft Exploration render 1">
         <img src="assets/hobby/p4-loft/2.jpg" alt="Loft Exploration render 2">
@@ -498,20 +510,20 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
           </div>
           <iframe class="hobby-frame" src="https://www.coohom.com/pub/saas/apps/share/nkyn5gqkqrf2eaabaa888888" title="Small Space, Big Character, live preview on Coohom" loading="lazy" referrerpolicy="no-referrer"></iframe>
         </div>
-        <div class="print-note">Live, spinnable 3D preview available at the link below</div>
+        <div class="print-note" data-i18n="common.printNote">Live, spinnable 3D preview available at the link below</div>
         <div class="hobby-body">
-          <div class="hobby-tag">Most Recent</div>
-          <h3 class="hobby-title">Small Space, Big Character</h3>
-          <div class="hobby-byline">By Aina Mardia Mohamad Kerta · Renders: Coohom</div>
-          <p class="hobby-desc">Two designs, one question: how far can small-space creativity go? The first squeezes a 1-bedroom, 1-bathroom unit with a compact kitchen into something that still feels classy, not cramped. The second leans into the loft style now booming across Sarawak, prized by students and working adults for its low rental.</p>
-          <p class="hobby-quote">"Proof that budget-friendly doesn't have to mean design-poor."</p>
+          <div class="hobby-tag" data-i18n="hobby.card5.tag">Most Recent</div>
+          <h3 class="hobby-title" data-i18n="hobby.card5.title">Small Space, Big Character</h3>
+          <div class="hobby-byline" data-i18n="common.byline">By Aina Mardia Mohamad Kerta · Renders: Coohom</div>
+          <p class="hobby-desc" data-i18n="hobby.card5.descFull">Two designs, one question: how far can small-space creativity go? The first squeezes a 1-bedroom, 1-bathroom unit with a compact kitchen into something that still feels classy, not cramped. The second leans into the loft style now booming across Sarawak, prized by students and working adults for its low rental.</p>
+          <p class="hobby-quote" data-i18n="hobby.card5.quote">"Proof that budget-friendly doesn't have to mean design-poor."</p>
           <a class="hobby-visit" href="https://www.coohom.com/pub/saas/apps/share/nkyn5gqkqrf2eaabaa888888" target="_blank" rel="noopener">
-            OPEN IN COOHOM
+            <span data-i18n="common.openInCoohom">OPEN IN COOHOM</span>
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
           </a>
         </div>
       </div>
-      <div class="gallery-label">In Frame — Full Render Set</div>
+      <div class="gallery-label" data-i18n="common.galleryLabel">In Frame — Full Render Set</div>
       <div class="hobby-gallery">
         <img src="assets/hobby/p5-smallspace/1.jpg" alt="Small Space, Big Character render 1">
         <img src="assets/hobby/p5-smallspace/2.jpg" alt="Small Space, Big Character render 2">
@@ -546,7 +558,10 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
   <div class="wrap">Aina Mardia Mohamad Kerta &middot; am.hana.mk@gmail.com &middot; Kuching, Sarawak</div>
 </footer>
 
+<script src="assets/i18n.js"></script>
 <script>
+I18N.apply();
+I18N.wireButtons();
 (function(){
   var el = document.getElementById('hero-cta-ad');
   var text = el.textContent;
@@ -608,17 +623,17 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
 
 document.getElementById('print-btn').addEventListener('click', function(){
   var btn = this;
+  var labelEl = btn.querySelector('span');
   var imgs = Array.prototype.slice.call(document.querySelectorAll('.hobby-gallery img, .cover-photo img'));
   var pending = imgs.filter(function(img){ return !img.complete; });
   if(!pending.length){ window.print(); return; }
-  var label = btn.textContent;
-  btn.textContent = 'Loading photos…';
+  labelEl.textContent = I18N.t('hb.loadingPhotos');
   btn.disabled = true;
   var remaining = pending.length;
   function done(){
     remaining--;
     if(remaining <= 0){
-      btn.textContent = label;
+      labelEl.textContent = I18N.t('common.downloadPdf');
       btn.disabled = false;
       window.print();
     }
